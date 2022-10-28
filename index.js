@@ -175,13 +175,13 @@ if(formato2[formato2.length - 1] == 'jpg'){
 
     Posts.create({
     titulo: req.body.titulo_noticia,
-    imagem: 'http://jonanews.herokuapp.com/public/images/upload/'+imagem,
+    imagem: 'https://jonanwes.vercel.app/public/images/upload/'+imagem,
     categoria: req.body.categoria,
     conteudo: req.body.noticia,
     slug: req.body.slug,
     author: req.body.autor,
     vews: 0,
-    imagemCapa:'http://jonanews.herokuapp.com/public/images/capa/'+imagemcapa,
+    imagemCapa:'https://jonanwes.vercel.app/public/images/capa/'+imagemcapa,
 })
 res.redirect('/admin/login');
 })
