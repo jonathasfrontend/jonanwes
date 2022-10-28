@@ -1,0 +1,17 @@
+<section class="mais-lidas">
+    <div class="mais-lidas-noticias">
+        <h2>Noticias recentes</h2>
+
+        <% for(let i = 0; i < postsTop.length; i++) { %>
+        <div class="cont-single">
+            <img src="<%= postsTop[i].imagem %>" alt="">
+            <div class="title-single">
+                <h4 class="title-1"><%= postsTop[i].categoria %></h4>
+                <p><%- postsTop[i].descricaoCurta %></p>
+                <a href="/<%- postsTop[i].slug %>">Ver</a>
+                <span>Views <%= postsTop[i].vews %></span>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</section>

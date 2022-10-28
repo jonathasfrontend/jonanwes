@@ -1,0 +1,49 @@
+    
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('partials/head.html') %>
+    <body>
+        <%- include('partials/header.html') %>
+
+        <section class="noticia-destaque">
+            <div class="center">
+                <div class="img-destaque">
+                    <div class="overlay-destaque"></div>
+                    <div class="title-destaque-descricao">
+                        <a href="<%= posts[0].slug %>"><h1><%= posts[0].titulo %></h1></a>
+                        <p><%- posts[0].descricaoCurta %>...</p>
+                    </div>
+                    <img src="<%= posts[0].imagem %>" />
+                </div>
+            </div>
+        </section>
+
+        <main class="content-noticias">
+            <h1 class="title-news">Ultimas Noticias</h1>
+                <div class="ultimas-noticias">
+
+                    <section class="noticias">
+                        <% for(let i = 1; i < posts.length; i++) { %>
+                        <div class="box-news">
+                            <div class="box-img-news">
+                                <img src="<%= posts[i].imagem %>" />
+                            </div>
+                            <div class="box-title-news">
+                                <span><%= posts[i].categoria %></span>
+                                <h1><%= posts[i].titulo %></h1>
+                                <p><%- posts[i].descricaoCurta %>...</p>
+                                <a href="<%= posts[i].slug %>">saiba mais</a>
+                            </div>
+                        </div>
+                        <% } %>
+                    </section>
+                    
+                    <%- include('partials/maislidas.html') %>
+
+                </div>
+        </main>
+        <%- include('partials/footer.html') %>
+
+        <script src="/public/js/script.js"></script>
+    </body>
+</html>

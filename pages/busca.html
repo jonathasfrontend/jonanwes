@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('partials/head.html') %>
+<body>
+    <%- include('partials/header.html') %>
+
+        <section style="width: 100%;" class="container-busca">
+            <h2><%= contagem %> Resultados</h2>
+            
+            <% for(let i = 0; i < posts.length; i++) { %>
+                <div class="busca">
+                    <div class="cont-busca">
+                        <img src="<%= posts[i].imagem %>" alt="">
+                        <div class="title-busca">
+                            <h1><%= posts[i].titulo %></h1>
+                            <h4 class="title-1"><%= posts[i].categoria %></h4>
+                            <p><%- posts[i].descricaoCurta %>...</p>
+                            <a href="<%= posts[i].slug %>">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+            
+            <% } %>
+        </section>
+
+    <%- include('partials/footer.html') %>
+</body>
+</html>

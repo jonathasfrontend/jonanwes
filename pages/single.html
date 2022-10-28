@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('partials/head.html') %>
+<body>
+    <%- include('partials/header.html') %>
+
+    <main class="container-news-single">
+        <section class="news-single-cont">
+            <div class="noticia-single">
+                <h1><%= noticia.titulo %></h1>
+                <div class="noticia-back">
+                    <img src="<%= noticia.imagem %>" alt="">
+                </div>
+                <div class="autor">
+                    <img src="<%= noticia.imagemCapa %>" alt="">
+                    <span>Por <%= noticia.author %></span>
+                </div>
+                <%- noticia.conteudo %>
+            </div>
+        </section>
+
+        <%- include('partials/maislidas.html') %>
+
+        </section>
+
+    </main>
+
+    <%- include('partials/footer.html') %>
+</body>
+</html>

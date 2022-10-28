@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do admin</title>
+    <link rel="stylesheet" href="../public/adminpainel.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h2><a href="/"><span style="font-weight:lighter;">Jona</span><b>News</b></a></h2>
+        </div>
+
+        <h1>Cadastro de noticia</h1>
+    </header>
+
+    <div class="container">
+        <form enctype="multipart/form-data" method="post" action="/admin/cadastro">
+            <div class="input-texts">
+                <input type="text" name="titulo_noticia" id="" placeholder="Titulo">
+                <p>Selecione uma imegem para capa .jpg</p>
+                <input type="file" name="arquivo" id="">
+                <input type="text" name="categoria" id="" placeholder="Categoria">
+                <input type="text" name="autor" id="" placeholder="Autor">
+                <p>Selecione uma imegem do autor .png</p>
+                <input type="file" name="arquivocapa" id="">
+                <input type="text" name="slug" id="" placeholder="Slug">
+            </div>
+            <div class="input-content">
+                <textarea name="noticia" id="" cols="30" rows="10" placeholder="Texto ..."></textarea>
+                <input type="submit" name="acao" value="Cadastrar">
+            </div>
+        </form>
+    </div>
+
+    <header>
+        <h1>Noticial cadastradas</h1>
+    </header>
+    <% for(let i = 0; i < posts.length; i++) { %>
+            <div class="noticia-single">
+                <h2>Titulo: <%= posts[i].titulo %></h2>
+                <div class="bts-link">
+                    <a class="ver" href="/<%= posts[i].slug %>">Ver noticia</a>
+                    <a class="delete" href="/admin/deletar/<%= posts[i].id %>">Deletar</a>
+                </div>
+            </div>
+        <% } %>
+</body>
+</html>
